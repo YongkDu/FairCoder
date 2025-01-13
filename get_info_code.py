@@ -301,13 +301,13 @@ def eval_med(models, write):
                 file_entropy += class_entropy
                 file_fairscore += class_fairscore
 
-                # get prefered group
+                # get preferred group
                 if class_score:
-                    prefered_group = max(class_score, key=class_score.get)
-                    if prefered_group in file_stat.keys():
-                        file_stat[prefered_group] += 1
+                    preferred_group = max(class_score, key=class_score.get)
+                    if preferred_group in file_stat.keys():
+                        file_stat[preferred_group] += 1
                     else:
-                        file_stat[prefered_group] = 1
+                        file_stat[preferred_group] = 1
 
             file_refuse /= (len(data)/10)
             file_entropy /= (len(data)/10)
@@ -316,13 +316,13 @@ def eval_med(models, write):
             print(f'fair score: {format(file_fairscore, ".2f")}')
             print(f'refuse rate: {format(file_refuse, ".2f")}')
             print(f'entropy: {format(file_entropy, ".2f")}')
-            print(f'prefered group: {prefered_group}\n')
+            print(f'preferred group: {preferred_group}\n')
             model_entropy[code_model].append(round(file_entropy, 2))
             model_fairscore[code_model].append(round(file_fairscore, 2))
             model_refuse[code_model].append(round(file_refuse, 2))
             if file_stat:
-                prefered_group = max(file_stat, key=file_stat.get)
-                model_prefergroup[code_model].append(prefered_group)
+                preferred_group = max(file_stat, key=file_stat.get)
+                model_prefergroup[code_model].append(preferred_group)
             else:
                 model_prefergroup[code_model].append('None')
     if write:
@@ -394,13 +394,13 @@ def eval_job(models, write):
                     file_entropy += class_entropy
                     file_fairscore += class_fairscore
 
-                    # get prefered group
+                    # get preferred group
                     if class_score:
-                        prefered_group = max(class_score, key=class_score.get)
-                        if prefered_group in file_stat.keys():
-                            file_stat[prefered_group] += 1
+                        preferred_group = max(class_score, key=class_score.get)
+                        if preferred_group in file_stat.keys():
+                            file_stat[preferred_group] += 1
                         else:
-                            file_stat[prefered_group] = 1
+                            file_stat[preferred_group] = 1
                 print(file_stat)
                 file_refuse /= (len(data)/10)
                 file_entropy /= (len(data)/10)
@@ -429,15 +429,15 @@ def eval_job(models, write):
             model_fairscore[code_model].append(round(avg_fairscore, 2))
             model_refuse[code_model].append(round(avg_refuse, 2))
             if avg_stat:
-                prefered_group = max(avg_stat, key=avg_stat.get)
-                model_prefergroup[code_model].append(prefered_group)
+                preferred_group = max(avg_stat, key=avg_stat.get)
+                model_prefergroup[code_model].append(preferred_group)
             else:
                 model_prefergroup[code_model].append('None')
             
             print(f'folder refuse rate: {format(avg_refuse, ".2f")}')
             print(f'folder entropy: {format(avg_entropy, ".2f")}')
             print(f'folder safe metric: {format(avg_fairscore, ".2f")}')
-            print(f'prefered group: {prefered_group}\n')
+            print(f'preferred group: {preferred_group}\n')
 
     if write:
         write_data(attr_list, model_fairscore, model_refuse, model_entropy, model_prefergroup, 'job_result')
@@ -512,13 +512,13 @@ def eval_edu(models, write):
                     file_entropy += class_entropy
                     file_fairscore += class_fairscore
 
-                    # get prefered group
+                    # get preferred group
                     if class_score:
-                        prefered_group = max(class_score, key=class_score.get)
-                        if prefered_group in file_stat.keys():
-                            file_stat[prefered_group] += 1
+                        preferred_group = max(class_score, key=class_score.get)
+                        if preferred_group in file_stat.keys():
+                            file_stat[preferred_group] += 1
                         else:
-                            file_stat[prefered_group] = 1
+                            file_stat[preferred_group] = 1
                 
                 file_refuse /= (len(data)/10)
                 file_entropy /= (len(data)/10)
@@ -547,15 +547,15 @@ def eval_edu(models, write):
             model_fairscore[code_model].append(round(avg_fairscore, 2))
             model_refuse[code_model].append(round(avg_refuse, 2))
             if avg_stat:
-                prefered_group = max(avg_stat, key=avg_stat.get)
-                model_prefergroup[code_model].append(prefered_group)
+                preferred_group = max(avg_stat, key=avg_stat.get)
+                model_prefergroup[code_model].append(preferred_group)
             else:
                 model_prefergroup[code_model].append('None')
             
             print(f'folder refuse rate: {format(avg_refuse, ".2f")}')
             print(f'folder entropy: {format(avg_entropy, ".2f")}')
             print(f'folder safe metric: {format(avg_fairscore, ".2f")}')
-            print(f'prefered group: {prefered_group}\n')
+            print(f'preferred group: {preferred_group}\n')
     if write:
         write_data(attr_list, model_fairscore, model_refuse, model_entropy, model_prefergroup, 'edu_result')
 
