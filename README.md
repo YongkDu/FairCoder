@@ -1,5 +1,5 @@
-# FairCode
-FairCode: Evaluating Social Bias of LLMs in Code Generation
+# FairCoder
+FairCoder: Evaluating Social Bias of LLMs in Code Generation
 
 Paper Link: https://arxiv.org/abs/2501.05396
 
