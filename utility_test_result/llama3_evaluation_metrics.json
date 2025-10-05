@@ -1,0 +1,11 @@
+{
+    "model": "llama3",
+    "total_functions": 100,
+    "pass@1": "42.00%",
+    "avg_test_case_pass_rate": "79.97%",
+    "raw_counts": {
+        "fully_passed": 42,
+        "total_passed_cases": 611,
+        "total_run_cases": 764
+    }
+}

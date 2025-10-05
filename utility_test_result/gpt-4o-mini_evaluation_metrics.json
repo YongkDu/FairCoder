@@ -1,0 +1,11 @@
+{
+    "model": "gpt-4o-mini",
+    "total_functions": 100,
+    "pass@1": "73.00%",
+    "avg_test_case_pass_rate": "94.70%",
+    "raw_counts": {
+        "fully_passed": 73,
+        "total_passed_cases": 930,
+        "total_run_cases": 982
+    }
+}
